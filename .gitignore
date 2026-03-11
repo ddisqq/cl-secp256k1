@@ -1,0 +1,24 @@
+# Compiled Lisp files
+*.fasl
+*.fas
+*.lib
+*.lx64fsl
+*.dx64fsl
+*.wx64fsl
+
+# ASDF cache
+~/.cache/common-lisp/
+
+# Editor files
+*~
+\#*\#
+.\#*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+*.swp
+*.swo
