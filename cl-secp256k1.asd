@@ -34,4 +34,6 @@ Suitable for Bitcoin and other cryptocurrency applications."
   :components ((:module "test"
                 :components ((:file "test-ecdsa"))))
   :perform (test-op (op c)
-             (symbol-call :cl-secp256k1.test :run-tests)))
+             (let ((result (symbol-call :cl-secp256k1.test :run-tests)))
+               (unless result
+                 (error "Tests failed")))))
