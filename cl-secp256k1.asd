@@ -2,9 +2,9 @@
 ;;;; SPDX-License-Identifier: BSD-3-Clause
 ;;;; This file is part of cl-secp256k1.
 
-(defsystem "cl-secp256k1"
+(asdf:defsystem #:"cl-secp256k1"
   :name "cl-secp256k1"
-  :version "1.0.0"
+  :version "0.1.0"
   :author "Parkian Company LLC"
   :license "BSD-3-Clause"
   :description "Pure Common Lisp secp256k1 ECDSA implementation with zero external dependencies"
@@ -21,11 +21,11 @@ Suitable for Bitcoin and other cryptocurrency applications."
                              (:file "point")
                              (:file "rfc6979")
                              (:file "ecdsa"))))
-  :in-order-to ((test-op (test-op "cl-secp256k1/test"))))
+  :in-order-to ((asdf:test-op (test-op "cl-secp256k1/test"))))
 
-(defsystem "cl-secp256k1/test"
+(asdf:defsystem #:"cl-secp256k1/test"
   :name "cl-secp256k1-test"
-  :version "1.0.0"
+  :version "0.1.0"
   :author "Parkian Company LLC"
   :license "BSD-3-Clause"
   :description "Test suite for cl-secp256k1"
@@ -33,7 +33,7 @@ Suitable for Bitcoin and other cryptocurrency applications."
   :serial t
   :components ((:module "test"
                 :components ((:file "test-ecdsa"))))
-  :perform (test-op (op c)
-             (let ((result (symbol-call :cl-secp256k1.test :run-tests)))
+  :perform (asdf:test-op (op c)
+             (let ((result (uiop:symbol-call :cl-secp256k1.test :run-tests)))
                (unless result
                  (error "Tests failed")))))
