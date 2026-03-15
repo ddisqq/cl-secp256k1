@@ -6,7 +6,7 @@
   :name "cl-secp256k1"
   :version "0.1.0"
   :author "Parkian Company LLC"
-  :license "BSD-3-Clause"
+  :license "Apache-2.0"
   :description "Pure Common Lisp secp256k1 ECDSA implementation with zero external dependencies"
   :long-description "Complete implementation of secp256k1 elliptic curve cryptography
 including ECDSA signing/verification with RFC 6979 deterministic nonces.
@@ -27,7 +27,7 @@ Suitable for Bitcoin and other cryptocurrency applications."
   :name "cl-secp256k1-test"
   :version "0.1.0"
   :author "Parkian Company LLC"
-  :license "BSD-3-Clause"
+  :license "Apache-2.0"
   :description "Test suite for cl-secp256k1"
   :depends-on ("cl-secp256k1")
   :serial t
