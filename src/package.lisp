@@ -24,7 +24,11 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Curve parameters
   (:export
-   #:with-secp256k1-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-secp256k1-timing
    #:secp256k1-batch-process
    #:secp256k1-health-check#:+secp256k1-p+
            #:+secp256k1-n+
@@ -33,7 +37,11 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Field arithmetic
   (:export
-   #:with-secp256k1-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-secp256k1-timing
    #:secp256k1-batch-process
    #:secp256k1-health-check#:mod-add
            #:mod-sub
@@ -44,7 +52,11 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Point operations
   (:export
-   #:with-secp256k1-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-secp256k1-timing
    #:secp256k1-batch-process
    #:secp256k1-health-check#:point-at-infinity-p
            #:point-add
@@ -56,7 +68,11 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Key operations
   (:export
-   #:with-secp256k1-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-secp256k1-timing
    #:secp256k1-batch-process
    #:secp256k1-health-check#:generate-private-key
            #:private-key-to-public
@@ -67,7 +83,11 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; ECDSA operations
   (:export
-   #:with-secp256k1-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-secp256k1-timing
    #:secp256k1-batch-process
    #:secp256k1-health-check#:ecdsa-sign
            #:ecdsa-verify
@@ -76,7 +96,11 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Signature encoding
   (:export
-   #:with-secp256k1-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-secp256k1-timing
    #:secp256k1-batch-process
    #:secp256k1-health-check#:der-encode-signature
            #:der-decode-signature
@@ -85,7 +109,11 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Utilities
   (:export
-   #:with-secp256k1-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-secp256k1-timing
    #:secp256k1-batch-process
    #:secp256k1-health-check#:bytes-to-integer
            #:integer-to-bytes
@@ -96,6 +124,10 @@ consider using hardware security modules or constant-time implementations.")
 (defpackage #:cl-secp256k1.test
   (:use #:cl #:cl-secp256k1)
   (:export
-   #:with-secp256k1-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-secp256k1-timing
    #:secp256k1-batch-process
    #:secp256k1-health-check#:run-tests))
