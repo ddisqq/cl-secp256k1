@@ -24,6 +24,7 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Curve parameters
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
@@ -39,6 +40,7 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Field arithmetic
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
@@ -56,6 +58,7 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Point operations
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
@@ -74,6 +77,7 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Key operations
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
@@ -91,6 +95,7 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; ECDSA operations
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
@@ -106,6 +111,7 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Signature encoding
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
@@ -121,6 +127,7 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Utilities
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
@@ -138,6 +145,7 @@ consider using hardware security modules or constant-time implementations.")
 (defpackage #:cl-secp256k1.test
   (:use #:cl #:cl-secp256k1)
   (:export
+   #:memoize-function
    #:deep-copy-list
    #:group-by-count
    #:identity-list
