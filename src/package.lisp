@@ -23,13 +23,19 @@ constant-time. For production use with secret keys in adversarial environments,
 consider using hardware security modules or constant-time implementations.")
 
   ;; Curve parameters
-  (:export #:+secp256k1-p+
+  (:export
+   #:with-secp256k1-timing
+   #:secp256k1-batch-process
+   #:secp256k1-health-check#:+secp256k1-p+
            #:+secp256k1-n+
            #:+secp256k1-gx+
            #:+secp256k1-gy+)
 
   ;; Field arithmetic
-  (:export #:mod-add
+  (:export
+   #:with-secp256k1-timing
+   #:secp256k1-batch-process
+   #:secp256k1-health-check#:mod-add
            #:mod-sub
            #:mod-mul
            #:mod-inverse
@@ -37,7 +43,10 @@ consider using hardware security modules or constant-time implementations.")
            #:mod-sqrt)
 
   ;; Point operations
-  (:export #:point-at-infinity-p
+  (:export
+   #:with-secp256k1-timing
+   #:secp256k1-batch-process
+   #:secp256k1-health-check#:point-at-infinity-p
            #:point-add
            #:point-double
            #:point-multiply
@@ -46,7 +55,10 @@ consider using hardware security modules or constant-time implementations.")
            #:valid-point-p)
 
   ;; Key operations
-  (:export #:generate-private-key
+  (:export
+   #:with-secp256k1-timing
+   #:secp256k1-batch-process
+   #:secp256k1-health-check#:generate-private-key
            #:private-key-to-public
            #:valid-private-key-p
            #:valid-public-key-p
@@ -54,19 +66,28 @@ consider using hardware security modules or constant-time implementations.")
            #:parse-public-key)
 
   ;; ECDSA operations
-  (:export #:ecdsa-sign
+  (:export
+   #:with-secp256k1-timing
+   #:secp256k1-batch-process
+   #:secp256k1-health-check#:ecdsa-sign
            #:ecdsa-verify
            #:ecdsa-sign-hash
            #:ecdsa-verify-hash)
 
   ;; Signature encoding
-  (:export #:der-encode-signature
+  (:export
+   #:with-secp256k1-timing
+   #:secp256k1-batch-process
+   #:secp256k1-health-check#:der-encode-signature
            #:der-decode-signature
            #:compact-encode-signature
            #:compact-decode-signature)
 
   ;; Utilities
-  (:export #:bytes-to-integer
+  (:export
+   #:with-secp256k1-timing
+   #:secp256k1-batch-process
+   #:secp256k1-health-check#:bytes-to-integer
            #:integer-to-bytes
            #:sha256
            #:sha256d
@@ -74,4 +95,7 @@ consider using hardware security modules or constant-time implementations.")
 
 (defpackage #:cl-secp256k1.test
   (:use #:cl #:cl-secp256k1)
-  (:export #:run-tests))
+  (:export
+   #:with-secp256k1-timing
+   #:secp256k1-batch-process
+   #:secp256k1-health-check#:run-tests))

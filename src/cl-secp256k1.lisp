@@ -60,3 +60,38 @@
 (defun sha256d (&rest args) "Auto-generated substantive API for sha256d" (declare (ignore args)) t)
 (defun random-bytes (&rest args) "Auto-generated substantive API for random-bytes" (declare (ignore args)) t)
 (defun run-tests (&rest args) "Auto-generated substantive API for run-tests" (declare (ignore args)) t)
+
+
+;;; ============================================================================
+;;; Standard Toolkit for cl-secp256k1
+;;; ============================================================================
+
+(defmacro with-secp256k1-timing (&body body)
+  "Executes BODY and logs the execution time specific to cl-secp256k1."
+  (let ((start (gensym))
+        (end (gensym)))
+    `(let ((,start (get-internal-real-time)))
+       (multiple-value-prog1
+           (progn ,@body)
+         (let ((,end (get-internal-real-time)))
+           (format t "~&[cl-secp256k1] Execution time: ~A ms~%"
+                   (/ (* (- ,end ,start) 1000.0) internal-time-units-per-second)))))))
+
+(defun secp256k1-batch-process (items processor-fn)
+  "Applies PROCESSOR-FN to each item in ITEMS, handling errors resiliently.
+Returns (values processed-results error-alist)."
+  (let ((results nil)
+        (errors nil))
+    (dolist (item items)
+      (handler-case
+          (push (funcall processor-fn item) results)
+        (error (e)
+          (push (cons item e) errors))))
+    (values (nreverse results) (nreverse errors))))
+
+(defun secp256k1-health-check ()
+  "Performs a basic health check for the cl-secp256k1 module."
+  (let ((ctx (initialize-secp256k1)))
+    (if (validate-secp256k1 ctx)
+        :healthy
+        :degraded)))
