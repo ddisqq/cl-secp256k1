@@ -5,7 +5,7 @@
 (asdf:defsystem #:"cl-secp256k1"
   :name "cl-secp256k1"
   :version "0.1.0"
-  :author "Parkian Company LLC"
+  :author "Park Ian Co"
   :license "Apache-2.0"
   :description "Pure Common Lisp secp256k1 ECDSA implementation with zero external dependencies"
   :long-description "Complete implementation of secp256k1 elliptic curve cryptography
@@ -24,9 +24,9 @@ Suitable for Bitcoin and other cryptocurrency applications."
   :in-order-to ((asdf:test-op (test-op "cl-secp256k1/test"))))
 
 (asdf:defsystem #:"cl-secp256k1/test"
-  :name "cl-secp256k1-test"
+  :name "cl-secp256k1"
   :version "0.1.0"
-  :author "Parkian Company LLC"
+  :author "Park Ian Co"
   :license "Apache-2.0"
   :description "Test suite for cl-secp256k1"
   :depends-on ("cl-secp256k1")
