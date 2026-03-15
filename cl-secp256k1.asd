@@ -15,12 +15,10 @@ Suitable for Bitcoin and other cryptocurrency applications."
   :serial t
   :components ((:file "package")
                (:module "src"
-                :serial t
-                :components ((:file "util")
-                             (:file "field")
-                             (:file "point")
-                             (:file "rfc6979")
-                             (:file "ecdsa"))))
+                :components ((:file "package")
+                             (:file "conditions" :depends-on ("package"))
+                             (:file "types" :depends-on ("package"))
+                             (:file "cl-secp256k1" :depends-on ("package" "conditions" "types"))))))
   :in-order-to ((asdf:test-op (test-op "cl-secp256k1/test"))))
 
 (asdf:defsystem #:"cl-secp256k1/test"
