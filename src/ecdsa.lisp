@@ -354,4 +354,4 @@
   (unless (= (length bytes) 64)
     (error "Invalid compact signature length: expected 64, got ~D" (length bytes)))
   (cons (bytes-to-integer (subseq bytes 0 32))
-        (bytes-to-integer (subseq bytes 32 64))))
+        (bytes-to-integer (subseq bytes 32 64))))))))
