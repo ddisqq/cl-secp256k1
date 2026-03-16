@@ -24,6 +24,9 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Curve parameters
   (:export
+   #:initialize-secp256k1
+   #:secp256k1-context
+   #:secp256k1-execute
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
@@ -40,6 +43,9 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Field arithmetic
   (:export
+   #:initialize-secp256k1
+   #:secp256k1-context
+   #:secp256k1-execute
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
@@ -58,6 +64,9 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Point operations
   (:export
+   #:initialize-secp256k1
+   #:secp256k1-context
+   #:secp256k1-execute
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
@@ -77,6 +86,9 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Key operations
   (:export
+   #:initialize-secp256k1
+   #:secp256k1-context
+   #:secp256k1-execute
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
@@ -95,6 +107,9 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; ECDSA operations
   (:export
+   #:initialize-secp256k1
+   #:secp256k1-context
+   #:secp256k1-execute
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
@@ -111,6 +126,9 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Signature encoding
   (:export
+   #:initialize-secp256k1
+   #:secp256k1-context
+   #:secp256k1-execute
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
@@ -127,6 +145,9 @@ consider using hardware security modules or constant-time implementations.")
 
   ;; Utilities
   (:export
+   #:initialize-secp256k1
+   #:secp256k1-context
+   #:secp256k1-execute
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
@@ -145,6 +166,9 @@ consider using hardware security modules or constant-time implementations.")
 (defpackage #:cl-secp256k1.test
   (:use #:cl #:cl-secp256k1)
   (:export
+   #:initialize-secp256k1
+   #:secp256k1-context
+   #:secp256k1-execute
    #:memoize-function
    #:deep-copy-list
    #:group-by-count
